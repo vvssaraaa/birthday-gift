@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Birthday Quest</title>
+    <link rel="stylesheet" href="Birthday.css">
+</head>
+<body>
+<div class="container" id="landing">
+    <h1>Happy birthday! <3 🎉</h1>
+    <h3>✨ Welcome to the Wizarding Quest ✨</h3>
+    <p>On this most magical of birthdays, your adventure begins...</p>
+    <button onclick="startQuest()">Begin the Spell ✨</button>
+</div>
+
+<div class="container hidden" id="quiz">
+    <h2>Challenge One:</h2>
+    <p>What did we eat when we saw the last Harry Potter movie together?</p>
+    <div class="quiz">
+        <button onclick="checkAnswer('fish')">Fish</button>
+        <button onclick="checkAnswer('pizza')">Pizza</button>
+        <button onclick="checkAnswer('ramen')">Ramen</button>
+        <button onclick="checkAnswer('pancakes')">Pancakes</button>
+    </div>
+    <div class="result" id="result"></div>
+</div>
+
+<script src="Birthday.js"></script>
+</body>
+</html>
