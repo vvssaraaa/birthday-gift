@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap');
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.4;
+    pointer-events: none;
+    animation: twinkle 5s infinite alternate;
+}
+@keyframes twinkle { from {opacity:0.2;} to {opacity:0.6;} }
+
+body {
+    font-family: 'Cinzel Decorative', cursive;
+    margin: 0;
+    background: linear-gradient(rgb(51, 32, 9), rgb(108, 72, 31));
+    background-size: cover;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Headings */
+h1,h2 {
+    font-family: 'MedievalSharp', cursive;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px gold, 0 0 10px orange, 2px 2px #f7e4b5;
+}
+
+/* Containers */
+.container {
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+    border: 2px solid gold;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,215,0,0.4);
+}
+.container.show { opacity:1; transform:translateY(0); animation: pulse 2s infinite alternate; }
+.hidden { display:none; }
+@keyframes pulse { 0% { box-shadow:0 0 10px rgba(255,215,0,0.2); } 100% { box-shadow:0 0 25px rgba(255,215,0,0.6); } }
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #513b1f, #332009, #5c2a9d);
+    background-size: 400% 400%;
+    animation: gradientShift 5s ease infinite;
+    color:#f7e4b5; border:none; padding:12px 24px; border-radius:12px;
+    cursor:pointer; font-weight:bold; box-shadow:0 0 15px rgb(4,0,0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover { transform:scale(1.15) rotate(-2deg); box-shadow:0 0 20px gold,0 0 30px orange; }
+@keyframes gradientShift {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+/* Quiz */
+.quiz { margin-top:30px; }
+.result { margin-top:20px; font-size:18px; font-weight:bold; }
+
+/* Gift images */
+.gift-img {
+    max-width: 200px; margin:10px; border-radius:12px; box-shadow:2px 2px 6px #000;
+    opacity:1; /* always visible */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gift-img:hover { transform:scale(1.05) rotate(-2deg); box-shadow:0 0 20px gold,0 0 30px orange; }
+
+/* Floating animation */
+.floating { animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+
+/* Final page heading glow */
+#finalPage h2 { animation: glow 2s infinite alternate; }
+@keyframes glow { from{ text-shadow:0 0 5px gold,0 0 10px orange;} to{ text-shadow:0 0 20px gold,0 0 30px orange;} }
+
+/* Typewriter text */
+#finalPageMessage { font-size:20px; margin-top:15px; color:#f7e4b5; text-shadow:1px 1px 2px black; }
+
+/* Sparkles */
+@keyframes sparkleFloat { 0%{transform:translateY(0);} 50%{transform:translateY(-15px);} 100%{transform:translateY(0);} }
+.sparkle { position:absolute; font-size:24px; animation:sparkleFloat 3s ease-in-out infinite; pointer-events:none; }
+.clickable {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.clickable:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.floating {
+    animation: float 3s ease-in-out infinite;
+    max-width: 150px;
+    margin: 10px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}

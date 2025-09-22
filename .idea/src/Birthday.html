@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="Birthday.css">
 </head>
 <body>
-<div class="container" id="landing">
-    <h1>Happy birthday! <3 🎉</h1>
+
+<!-- Landing Page -->
+<div class="container show" id="landing">
+    <h1>Happy birthday <3 🎉</h1>
     <h3>✨ Welcome to the Wizarding Quest ✨</h3>
+    <img src="Pictures/Luna4.png" class="gift-img">
     <p>On this most magical of birthdays, your adventure begins...</p>
     <button onclick="startQuest()">Begin the Spell ✨</button>
 </div>
 
+<!-- Quiz Page -->
 <div class="container hidden" id="quiz">
     <h2>Challenge One:</h2>
     <p>What did we eat when we saw the last Harry Potter movie together?</p>
@@ -25,37 +29,50 @@
     <div class="result" id="result"></div>
 </div>
 
+<!-- Spell Page -->
 <div class="container hidden" id="puzzle2">
     <h2>Challenge Two: Cast the Spell</h2>
     <p>Complete the spell to light the way.</p>
-    <pre>
-if (wand.light == "____") {
-    openPath();
-}
-    </pre>
+    <pre>if (wand.light == "____") { <br> openPath(); }</pre>
     <input type="text" id="spellInput" placeholder="Type the spell here...">
     <button onclick="checkSpell(document.getElementById('spellInput').value)">Cast Spell</button>
     <div class="result" id="spellResult"></div>
+    <img src="Pictures/Silvi.png" class="gift-img floating" alt="Luna 1">
+
 </div>
 
+<!-- Password Page -->
 <div class="container hidden" id="puzzle3">
     <h2>Challenge Three: The Hidden Password</h2>
-    <p>
-        The password to unlock the final gift is hidden somewhere...<br>
-        (Hint: You say it a lot)
-    </p>
+    <p>The password to unlock the final gift is hidden somewhere...<br>(Hint: You say it a lot)</p>
     <input type="text" id="passwordInput" placeholder="Enter password...">
     <button onclick="checkPassword(document.getElementById('passwordInput').value)">Unlock Gift</button>
     <div class="result" id="passwordResult"></div>
 </div>
 
+<!-- Final Page -->
 <div class="container hidden" id="finalPage">
-    <h2>✨ You Did It! Flink Mauen ✨</h2>
-    <p>You solved every challenge, wizard. Here is your true birthday gift.</p>
-    <p>💌 [Your personal message, or link to a surprise here]</p>
+    <h2>✨ You Did It, Flink Mauen ✨</h2>
+    <p id="finalPageMessage"></p>
+
+    <!-- Clickable Present -->
+    <img src="Pictures/present.png" id="present" class="gift-img clickable">
+
+    <!-- Hidden Cats -->
+    <div id="cats" class="hidden">
+        <img src="Pictures/Luna2.png" class="gift-img floating" alt="Luna 2">
+        <img src="Pictures/Luna1.png" class="gift-img floating" alt="Luna 1">
+        <img src="Pictures/Silvi.png" class="gift-img floating" alt="Silvi">
+        <img src="Pictures/Luna3.png" class="gift-img floating" alt="Luna 3">
+
+    </div>
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script src="Birthday.js"></script>
+
+<audio id="bgMusic" loop>
+    <source src="Pictures/hp-theme.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>
